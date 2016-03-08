@@ -1,0 +1,18 @@
+body {
+    background-color: palegoldenrod;
+}
+
+form {
+    width: 500px;
+    margin-left: auto;
+    margin-right: 500px;
+    margin-top: 100px;
+}
+
+input[type="text"] {
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-bottom: 20px;
+}

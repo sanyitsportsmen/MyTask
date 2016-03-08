@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'task/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+      <div class="form-group">
+          {% for field in fields %}
+            <label for="field{{ field.id }}">{{ field.field_data.field_name }}:</label>
+            <input type="text" class="form-control" id="field{{ field.id }}" value="{{ field.field_data.field_text }}">
+        {% endfor %}
+      </div>
+      <button type="submit" class="btn btn-default">Добавить поле</button>
+    </form>
+</body>
+</html>
